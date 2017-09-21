@@ -1,4 +1,13 @@
-DROP TABLE livre;
+
+ CREATE TABLE personne (
+    id_emprunteur  SERIAL primary key,
+    nom            varchar(80),
+    prenom         varchar(80),
+    contact        text
+ );
+
+
+
 CREATE TABLE livre (
     id_livre        SERIAL primary key,
     isbn            varchar(15),
@@ -10,16 +19,6 @@ CREATE TABLE livre (
 );
 
 
-DROP TABLE personne;
- CREATE TABLE personne (
-    id_emprunteur  SERIAL primary key,
-    nom            varchar(80),
-    prenom         varchar(80),
-    contact        text
- );
-
-
-DROP TABLE emprunt;
 CREATE TABLE emprunt (
     id_livre       int references livre,
     id_emprunteur  int references personne,
