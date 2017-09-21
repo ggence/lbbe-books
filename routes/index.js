@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'LBBE-Books' });
 });
 
+/* GET creerCompte. */
+
+
 module.exports = router;
+
