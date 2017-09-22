@@ -8,11 +8,6 @@ router.get('/', function(req, res, next) {
 
 
 
-// router.get('/EmprunterRendre', function(req, res, next) {
-//   res.render('EmprunterRendre', { title: 'Emprunter et Rendre' });
-// });
-
-
 
 router.post('/Emprunter', function(requete, res, next) {
   console.log("L'utilisateur "+ requete.body.emprunteur, "a emprunte " +requete.body.livre);
