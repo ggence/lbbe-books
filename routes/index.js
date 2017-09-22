@@ -34,4 +34,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'LBBE-Books', liste: listeLivres });
 });
 
+router.get('/ajouterLivre', function(req, res, next) {
+  //var livres=bdd.getListeLivres();
+  res.render('ajouterlivre', { title: 'LBBE-Books'});
+});
 module.exports = router;
