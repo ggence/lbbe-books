@@ -6,6 +6,7 @@ Référencer les livres du LBBE pour plus d'accessibilité
 [ICI](https://github.com/ggence/lbbe-books/blob/master/docs/FullSizeRender.jpg?raw=true)
 
 # TODO-LIST
+<<<<<<< HEAD
 
 - Voir https://github.com/ggence/lbbe-books/issues
 
@@ -47,3 +48,7 @@ $git merge --no--ff postEmpruntLivre2 # --no-ff permet de garder l'historique d'
 
 
 
+=======
+- Lister les livres
+- Ajouter un livre
+>>>>>>> modification du readme ajout de ma tache
