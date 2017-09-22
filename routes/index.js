@@ -41,6 +41,7 @@ router.get('/creerCompte', function(req, res, next) {
   res.render('creerCompte');
 });
 
+<<<<<<< HEAD
 // router.post('/creerCompte', function(requete, res) {
 //   res.render('index', { title: 'LBBE-zob', msg: requete.body.nom});
 // });
@@ -123,4 +124,10 @@ router.post('/searchISBN', function(req, res, next) {
 });
 
 
+=======
+router.get('/ajouterLivre', function(req, res, next) {
+  //var livres=bdd.getListeLivres();
+  res.render('ajouterlivre', { title: 'LBBE-Books'});
+});
+>>>>>>> ajout d'un bouton pour ajouter un livre
 module.exports = router;
