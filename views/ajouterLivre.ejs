@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>LBBE-Books</h1>
+    <p>Ajouter un livre</p>
+    <form name="form1" method="POST" action="">
+        <table>
+            <tr>
+                <td>ISBN</td>
+                <td><input type="text" name="isbn" ></td>
+                <td><button type="button" id="search_isbn">search</button></td>
+            </tr>
+            <tr>
+                <td>Titre</td>
+                <td><input type="text" name="titre" ></td>
+            </tr>
+            <tr>
+                <td>Auteur</td>
+                <td><input type="text" name="auteur" ></td>
+            </tr>
+            <tr>
+                <td>Résumé</td>
+                <td><input type="textarea" name="resume" ></td>
+            </tr>
+            <tr>
+                <td>Position</td>
+                <td><input type="text" name="position" ></td>
+            </tr>
+            <tr>
+                <td>Propriétaire</td>
+                <td>
+                    <select name="proprietaire" >
+                        <option value="patate">patate</option>
+                        <option value="simon">simon</option>
+                        <option value="ernest">ernest</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Valider" ></td>
+            </tr>
+        </table>
+        </form>
+  </body>
+</html>
