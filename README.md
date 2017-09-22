@@ -2,6 +2,9 @@
 
 Référencer les livres du LBBE pour plus d'accessibilité
 
+# SCHEMA
+[ICI](https://github.com/ggence/lbbe-books/blob/master/docs/FullSizeRender.jpg?raw=true)
+
 # TODO-LIST
 - Voir https://github.com/ggence/lbbe-books/issues
 
