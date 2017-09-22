@@ -7,7 +7,15 @@
   <body>
     <h1>LBBE-Books</h1>
     <p>Bienvenue sur le site de gestion des livres du LBBE</p>
+
     <a href="/AjouterLivre"><button type="button" name="button">Ajouter un livre !</button></a>
+
+    <h2>Liste des livres</h2>
+    <ul>
+        <% liste.forEach(function(livre) { %>
+            <li><%= livre.titre %> - <%= livre.auteurs %></li>
+        <% }); %>
+    </ul>
 
   </body>
 </html>

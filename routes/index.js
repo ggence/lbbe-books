@@ -14,12 +14,10 @@ router.get('/creerCompte', function(req, res, next) {
   res.render('creerCompte');
 });
 
-<<<<<<< HEAD
 // router.post('/creerCompte', function(requete, res) {
 //   res.render('index', { title: 'LBBE-zob', msg: requete.body.nom});
 // });
 
-=======
 router.get('/livre/:id', function(req, res, next) {
   InteragitBDD.GetLivre(req.params.id, function(err, livre) {
     if (livre !== undefined) {
@@ -41,7 +39,6 @@ router.get('/livre/:id', function(req, res, next) {
   // res.render('LivreRecherche', livre);
 
 });
->>>>>>> Recherche de livre ajoutée
 
 /* Add a book to the DB. */
 router.post('/AjouterLivre', function (req, res) {
