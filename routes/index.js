@@ -20,7 +20,7 @@ function Livre(id, isbn, titre, auteurs, id_proprietaire, emplacement, empruntSt
 /*instanciation de livre */
 var livre1 = new Livre(1, "132321321312", "Toto à la plage", "Hugo V", 4, "dtc", false);
 var livre2 = new Livre(2, "98746468987", "Toto à la montagne", "Zola E", 4, "dtc", true);
-var livre3 = new Livre(3, "1337", "Toto à la ferme de calcul", "Delomtte S", 12, "Omega", false);
+var livre3 = new Livre(3, "1337", "Toto à la ferme de calcul", "Delmotte S", 12, "Omega", false);
 
 /* constructiuon d'un tableau de livres */
 var listeLivres = [];
