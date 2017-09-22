@@ -7,5 +7,14 @@
   <body>
     <h1>LBBE-Books</h1>
     <p>Bienvenue sur le site de gestion des livres du LBBE</p>
+
+    <h2>Liste des livres</h2>
+    <ul>
+        <% liste.forEach(function(livre) { %>
+            <li><%= livre.titre %> - <%= livre.auteurs %></li>
+        <% }); %>
+    </ul>
+    
   </body>
 </html>
+
