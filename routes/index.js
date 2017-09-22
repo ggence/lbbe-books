@@ -10,7 +10,7 @@ router.get('/EmprunterRendre', function(req, res, next) {
 });
 router.post('/Emprunter', function(requete, res, next) {
   console.log("L'utilisateur "+ requete.body.emprunteur, "a emprunte" +requete.body.livre);
-  res.render('index', { title: 'Emprunter '+requete.body.livre ,msg: requete.body.livre });
+  res.render('EmpruntOK', { title:requete.body.emprunteur+ ' a emprunte '+requete.body.livre ,livre: requete.body.livre,emprunteur: requete.body.emprunteur });
 });
 
 module.exports = router;
