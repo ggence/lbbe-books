@@ -3,6 +3,8 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/lib/jquery.min.js"></script>
+    <script src="/javascripts/sources/lbbe.jquery.js"></script>
   </head>
   <body>
     <h1>LBBE-Books</h1>
@@ -11,7 +13,7 @@
         <table>
             <tr>
                 <td>ISBN</td>
-                <td><input type="text" name="isbn" ></td>
+                <td><input type="text" name="isbn"></td>
                 <td><button type="button" id="search_isbn">search</button></td>
             </tr>
             <tr>
@@ -20,11 +22,11 @@
             </tr>
             <tr>
                 <td>Auteur</td>
-                <td><input type="text" name="auteur" ></td>
+                <td><input type="text" name="auteurs" ></td>
             </tr>
             <tr>
                 <td>Résumé</td>
-                <td><input type="textarea" name="resume" ></td>
+                <td><textarea rows="7" cols="50" name="resume" ></textarea></td>
             </tr>
             <tr>
                 <td>Position</td>
@@ -34,9 +36,10 @@
                 <td>Propriétaire</td>
                 <td>
                     <select name="proprietaire" >
-                        <option value="patate">patate</option>
-                        <option value="simon">simon</option>
-                        <option value="ernest">ernest</option>
+                        <option value='null'></option>
+                        <% liste_proprietaires.forEach(function(proprietaire) { %>
+                            <option value=<%= proprietaire.id %></option><%= proprietaire.nom %> - <%= proprietaire.prenom %></option>
+                        <% }); %>
                     </select>
                 </td>
             </tr>
