@@ -16,7 +16,7 @@ A ce moment je vous assigne une tache que vous pouvez voir dans https://github.c
 Si vous ne comprenez pas la tache (issue) n'hésitez pas à poser des questions sur le fil de question lié à la tâche.
 
 
-## Exemple:
+## Exemple developpeur:
 ```shell
 $git clone https://github.com/ggence/lbbe-books
 $git checkout -b "postEmpruntLivre2"
@@ -30,7 +30,16 @@ $git add mes_fichiers
 $git commit -m "j'ai fais des modifs"
 $git push
 ```
-*Je n'oubli pas de faire des git pull origin master pour me mettre à jour meme dans ma branche !*
+
+## Exemple intégrateur (administrateur du projet):
+```shell
+$git fetch origin
+$git checkout postEmpruntLivre2
+$git rebase master
+#Gestion des conflits potentiels par l'administrateur
+$git checkout master
+$git merge --no--ff postEmpruntLivre2 # --no-ff permet de garder l'historique d'une création de branche
+```
 
 
 # CONVENTION DE DEVELOPPEMENT
