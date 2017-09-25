@@ -7,13 +7,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'LBBE-Books' });
 });
 
-module.exports = router;
-
-
-// router.get('/AjouterLivre', function (req, res) {
-//   res.render('FormulaireLivre', + { title: 'AjouterLivre' });
-// });
-
 
 /* Add a book to the DB. */
 router.post('/AjouterLivre', function (req, res) {
@@ -27,3 +20,6 @@ router.post('/AjouterLivre', function (req, res) {
   // InteragitBDD.Add1Livre( titre_livre , auteurs, id_proprietaire ,emplacement, ISBN, resume);
   res.render('ValidationLivreAjoute',{title: 'contact' , titre_livre:titre_livre}); // render et pas sendFile car utilisation d un moteur de rendu
 });
+
+
+module.exports = router;
