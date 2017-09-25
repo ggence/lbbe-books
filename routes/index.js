@@ -15,8 +15,8 @@ router.post('/Emprunter', function(requete, res, next) {
   // Ici une requete
   //
   //une promesse qui fait la requete, qui renvoie sur une page bilan en cas de succes et vers une page d'erreur sinon
-
-  res.render('Emprunter', { title:requete.body.emprunteur+ ' a emprunte '+requete.body.livre ,livre: requete.body.livre,emprunteur: requete.body.emprunteur });
+  res.render('ErreurEmprunterRendre', { title:requete.body.emprunteur+ ' a echoue a emprunte '+requete.body.livre  });
+  //res.render('Emprunter', { title:requete.body.emprunteur+ ' a emprunte '+requete.body.livre ,livre: requete.body.livre,emprunteur: requete.body.emprunteur });
 });
 
 router.post('/Rendre', function(requete, res, next) {
@@ -25,8 +25,8 @@ router.post('/Rendre', function(requete, res, next) {
   // Ici une requete
   //
   //une promesse qui fait la requete, qui renvoie sur une page bilan en cas de succes et vers une page d'erreur sinon
-
-  res.render('Rendre', {livre: requete.body.livre });
+  res.render('ErreurEmprunterRendre', { title:'La restitiion de '+requete.body.livre + ' a echoue' });
+  //res.render('Rendre', {livre: requete.body.livre });
 });
 
 module.exports = router;
