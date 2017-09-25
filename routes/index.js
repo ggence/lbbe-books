@@ -10,16 +10,16 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 
 
-router.get('/AjouterLivre', function (req, res) {
-  res.render('FormulaireLivre', + { title: 'AjouterLivre' });
-});
+// router.get('/AjouterLivre', function (req, res) {
+//   res.render('FormulaireLivre', + { title: 'AjouterLivre' });
+// });
 
 
 /* Add a book to the DB. */
 router.post('/AjouterLivre', function (req, res) {
   var ISBN = req.body.ISBN;
   var titre_livre= req.body.titre;
-  console.log(titre_livre);
+  // console.log(titre_livre);
   var auteurs = req.body.auteurs;
   var resume = req.body.resume;
   var emplacement = req.body.emplacement;
