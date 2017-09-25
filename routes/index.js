@@ -38,7 +38,7 @@ router.post('/Rendre', function(requete, res, next) {
   // Ici une requete
   //
   //une promesse qui fait la requete, qui renvoie sur une page bilan en cas de succes et vers une page d'erreur sinon
-  res.render('ErreurEmprunterRendre', { title:'La restitiion de '+requete.body.livre + ' a echoue' });
+  res.render('ErreurEmprunterRendre', { title:'La restitution de '+requete.body.livre + ' a echoue' });
   //res.render('Rendre', {livre: requete.body.livre });
 });
 
