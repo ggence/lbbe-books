@@ -27,9 +27,7 @@ ATTENTION: Vous n'avez pas le droit d'écrire dans Master Ou une branche que vou
 $git clone https://github.com/ggence/lbbe-books
 $git checkout -b "postEmpruntLivre2"
 $git status
-```
-*Je fais des modifs*
-```shell
+#Modification du code
 $git diff
 $git status
 $git add mes_fichiers
