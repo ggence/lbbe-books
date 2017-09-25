@@ -14,10 +14,32 @@ router.get('/creerCompte', function(req, res, next) {
   res.render('creerCompte');
 });
 
+<<<<<<< HEAD
 // router.post('/creerCompte', function(requete, res) {
 //   res.render('index', { title: 'LBBE-zob', msg: requete.body.nom});
 // });
 
+=======
+router.get('/livre/:id', function(req, res, next) {
+  // InteragitBDD.GetLivre(req.params.id, function(err, livre) {
+  //   if (err == 0) {
+  //     res.render('LivreRecherche', livre);
+  //   } else {
+  //     var errorGetlivre = {
+  //       status = ""
+  //       stack = ""
+  //     }
+  //     res.render('error',{message:err, error:errorGetlivre});
+  //   }
+  // });
+  // var livre ={
+  //   titre : "Guerre et pet",
+  //   auteur : "Voldemort",
+  //   resume : "..."
+  // }
+  // res.render('LivreRecherche', livre);
+});
+>>>>>>> Recherche de livre ajoutée
 
 /* Add a book to the DB. */
 router.post('/AjouterLivre', function (req, res) {
