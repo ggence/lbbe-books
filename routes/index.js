@@ -28,7 +28,7 @@ router.post('/Emprunter', function(requete, res, next) {
   // Ici une requete
   //
   //une promesse qui fait la requete, qui renvoie sur une page bilan en cas de succes et vers une page d'erreur sinon
-  res.render('ErreurEmprunterRendre', { title:requete.body.emprunteur+ ' a echoue a emprunte '+requete.body.livre  });
+  res.render('ErreurEmprunterRendre', { title:requete.body.emprunteur+ ' a echoue a emprunter '+requete.body.livre  });
   //res.render('Emprunter', { title:requete.body.emprunteur+ ' a emprunte '+requete.body.livre ,livre: requete.body.livre,emprunteur: requete.body.emprunteur });
 });
 
