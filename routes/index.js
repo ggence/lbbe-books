@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var isbn = require('node-isbn');
 // const InteragitBDD = require('InteragitBDD');
 
 /* GET home page. */
@@ -44,8 +45,9 @@ router.post('/Rendre', function(requete, res, next) {
 /* GET page ajouter livre */
 router.get('/ajouterLivre', function(req, res, next) {
   // recuperer ici les proprietaires ds la bdd (utilisation de la methode adequat du module interragitBDD  var proprietaires =  interrogation_bdd.getListUtilisateurs();
-  //var proprietaires =  interrogation_bdd.getListUtilisateurs();
-  //res.render('ajouterLivre', { title: 'LBBE-Books ajouter un livre', liste_proprietaires: proprietaires });
+  // var proprietaires =  interrogation_bdd.getListUtilisateurs();
+  var proprietaires = [];
+  res.render('ajouterLivre', { title: 'LBBE-Books ajouter un livre', liste_proprietaires: proprietaires });
 });
 
 /* POST search ISBN*/
