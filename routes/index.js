@@ -14,10 +14,34 @@ router.get('/creerCompte', function(req, res, next) {
   res.render('creerCompte');
 });
 
+<<<<<<< HEAD
 // router.post('/creerCompte', function(requete, res) {
 //   res.render('index', { title: 'LBBE-zob', msg: requete.body.nom});
 // });
 
+=======
+router.get('/livre/:id', function(req, res, next) {
+  InteragitBDD.GetLivre(req.params.id, function(err, livre) {
+    if (livre !== undefined) {
+      res.render('LivreRecherche', livre);
+    } else {
+      var errorGetlivre = {
+        status = ""
+        stack = ""
+      }
+      res.render('error',{message:"Le livre demandé n'a pas été trouvé", error:errorGetlivre});
+    }
+  });
+
+  // var livre ={
+  //   titre : "Guerre et pet",
+  //   auteur : "Voldemort",
+  //   resume : "..."
+  // }
+  // res.render('LivreRecherche', livre);
+
+});
+>>>>>>> Recherche de livre ajoutée
 
 /* Add a book to the DB. */
 router.post('/AjouterLivre', function (req, res) {
@@ -34,6 +58,7 @@ router.post('/AjouterLivre', function (req, res) {
 
 
 router.post('/Emprunter', function(requete, res, next) {
+  console.log("Miaou");
   console.log("L'utilisateur "+ requete.body.emprunteur, "a emprunte " +requete.body.livre);
 
   // Ici une requete
