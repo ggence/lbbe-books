@@ -44,6 +44,3 @@ $git rebase master
 $git checkout master
 $git merge --no--ff postEmpruntLivre2 # --no-ff permet de garder l'historique d'une création de branche
 ```
-
-
-

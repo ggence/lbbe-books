@@ -41,5 +41,25 @@ router.post('/Rendre', function(requete, res, next) {
   res.render('ErreurEmprunterRendre', { title:'La restitution de '+requete.body.livre + ' a echoue' });
   //res.render('Rendre', {livre: requete.body.livre });
 });
+/* GET page ajouter livre */
+router.get('/ajouterLivre', function(req, res, next) {
+  // recuperer ici les proprietaires ds la bdd (utilisation de la methode adequat du module interragitBDD  var proprietaires =  interrogation_bdd.getListUtilisateurs();
+  //var proprietaires =  interrogation_bdd.getListUtilisateurs();
+  //res.render('ajouterLivre', { title: 'LBBE-Books ajouter un livre', liste_proprietaires: proprietaires });
+});
+
+/* POST search ISBN*/
+router.post('/searchISBN', function(req, res, next) {
+  var isbn_livre=req.body.isbn;
+  isbn.resolve(isbn_livre, function (err, book) {
+    // il faut ameliorer ici la gestion de l'erreur voir dans la donc node-isbn
+    if (err) {
+      res.status(444).json('Pas de livre trouvé avec cet ISBN');
+    } else {
+      res.json(book);
+    }
+  });
+});
+
 
 module.exports = router;
