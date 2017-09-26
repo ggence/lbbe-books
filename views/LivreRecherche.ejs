@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= titre %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Titre : <%= titre %></h1>
+    <h1>Auteur : <%= auteur %></h1>
+    <h1>Résumé : <%= resume %></h1>
+    <form method="post" action ="/Emprunter">
+      <p>
+        <label>Nom </label> : <input type="text" name="emprunteur" />
+      </p>
+     <input type="hidden" name="livre" value= "<%= titre %>">
+      <input type="submit" value="Emprunter" />
+    </form>
+    <form method="post" action ="/Rendre">
+     <input type="hidden" name="livre" value= "<%= titre %>">
+      <input type="submit" value="Rendre" />
+    </form>
+    <!-- <a href="/Emprunter">Emprunter</a>
+    <a href="/Rendre">rendre</a> -->
+  </body>
+</html>
