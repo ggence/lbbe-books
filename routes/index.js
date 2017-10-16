@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var isbn = require('node-isbn');
-// const InteragitBDD = require('InteragitBDD');
+const InteragitBDD = require('../lib/InteragitBDD');
 
 /* =============================================================
 partie bidon en attendant le developpement de l'API BDD */
@@ -16,6 +16,7 @@ function Livre(id, isbn, titre, auteurs, id_proprietaire, emplacement, empruntSt
     this.emplacement = emplacement;
     this.empruntStatus = empruntStatus;
 }
+
 
 /*instanciation de livre */
 var livre1 = new Livre(1, "132321321312", "Toto à la plage", "Hugo V", 4, "dtc", false);
@@ -32,7 +33,13 @@ listeLivres.push(livre1, livre2, livre3);
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  //var livres=bdd.getListeLivres();
+  InteragitBDD.getListLivres("titre", false, function(e,r){
+        if(e){console.log(e);}
+        else{console.log(r);}
+    } );
+
+
+
   res.render('index', { title: 'LBBE-Books', liste: listeLivres });
 
 });
@@ -53,8 +60,8 @@ router.get('/livre/:id', function(req, res, next) {
       res.render('LivreRecherche', livre);
     } else {
       var errorGetlivre = {
-        status = ""
-        stack = ""
+        status : "",
+        stack : ""
       }
       res.render('error',{message:"Le livre demandé n'a pas été trouvé", error:errorGetlivre});
     }
