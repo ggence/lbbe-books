@@ -31,7 +31,7 @@ listeLivres.push(livre1, livre2, livre3);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-<<<<<<< HEAD
+
   //var livres=bdd.getListeLivres();
   res.render('index', { title: 'LBBE-Books', liste: listeLivres });
 
@@ -42,7 +42,7 @@ router.get('/creerCompte', function(req, res, next) {
   res.render('creerCompte');
 });
 
-<<<<<<< HEAD
+
 // router.post('/creerCompte', function(requete, res) {
 //   res.render('index', { title: 'LBBE-zob', msg: requete.body.nom});
 // });
@@ -102,11 +102,9 @@ router.post('/Rendre', function(requete, res, next) {
   //une promesse qui fait la requete, qui renvoie sur une page bilan en cas de succes et vers une page d'erreur sinon
   res.render('ErreurEmprunterRendre', { title:'La restitution de '+requete.body.livre + ' a echoue' });
   //res.render('Rendre', {livre: requete.body.livre });
-=======
-    //var livres=bdd.getListeLivres();
-    res.render('index', { title: 'LBBE-Books', liste: listeLivres });
->>>>>>> correction faute 'ferme'
+
 });
+
 /* GET page ajouter livre */
 router.get('/ajouterLivre', function(req, res, next) {
   // recuperer ici les proprietaires ds la bdd (utilisation de la methode adequat du module interragitBDD  var proprietaires =  interrogation_bdd.getListUtilisateurs();
@@ -129,14 +127,4 @@ router.post('/searchISBN', function(req, res, next) {
 });
 
 
-=======
-router.get('/ajouterLivre', function(req, res, next) {
-    //var livres=bdd.getListeLivres();
-    res.render('ajouterlivre', { title: 'LBBE-Books' });
-});
-<<<<<<< HEAD
->>>>>>> ajout d'un bouton pour ajouter un livre
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> correction faute 'ferme'
