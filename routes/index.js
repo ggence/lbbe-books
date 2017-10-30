@@ -49,9 +49,24 @@ router.get('/creerCompte', function(req, res, next) {
 });
 
 
-// router.post('/creerCompte', function(requete, res) {
-//   res.render('index', { title: 'LBBE-zob', msg: requete.body.nom});
-// });
+router.post('/creerCompte', function(requete, res) {
+
+  var nom= requete.body.nom;
+  var prenom = requete.body.prenom;
+  var contact = requete.body.contact;
+
+  InteragitBDD.Add1Utilisateur(nom , prenom , contact, callback=function(e,r){
+      if(e){console.log(e);}
+      else{
+        console.log(r);
+        if(r){ res.render('ValidationUtilisateurAjoute',{title: 'LBBE-utilisateur cree' , utilisateur_nom:nom , utilisateur_prenom:prenom  }); }// render et pas sendFile car utilisation d un moteur de rendu
+        else{ res.render('ErreurUtilisateurAjoute',{title: 'LBBE-utilisateur cree erreur' , utilisateur_nom:nom , utilisateur_prenom:prenom }); }
+      } 
+    
+  }); // should print true if all goes well
+
+});
+
 
 router.get('/livre/:id', function(req, res, next) {
   InteragitBDD.GetLivre(req.params.id, function(err, livre) {
