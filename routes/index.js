@@ -35,12 +35,11 @@ router.get('/', function(req, res, next) {
 
   InteragitBDD.getListLivres("titre", false, function(e,r){
         if(e){console.log(e);}
-        else{console.log(r);}
+        else{
+          console.log(r);
+          res.render('index', { title: 'LBBE-Books', liste: r });
+        }
     } );
-
-
-
-  res.render('index', { title: 'LBBE-Books', liste: listeLivres });
 
 });
 
@@ -86,7 +85,18 @@ router.post('/AjouterLivre', function (req, res) {
   var emplacement = req.body.emplacement;
   var id_proprietaire = req.body.id_proprietaire;
   // InteragitBDD.Add1Livre( titre_livre , auteurs, id_proprietaire ,emplacement, ISBN, resume);
-  res.render('ValidationLivreAjoute',{title: 'contact' , titre_livre:titre_livre}); // render et pas sendFile car utilisation d un moteur de rendu
+
+  InteragitBDD.Add1Livre( titre_livre , auteurs, id_proprietaire ,emplacement, ISBN, resume, callback=function(e,r){
+      if(e){console.log(e);}
+      else{
+        console.log(r);
+        if(r){ res.render('ValidationLivreAjoute',{title: 'contact' , titre_livre:titre_livre}); }// render et pas sendFile car utilisation d un moteur de rendu
+        else{ res.render('ErreurLivreAjoute',{title: 'contact' , titre_livre:titre_livre}); }
+      } 
+    
+  }) // should print true if all goes well
+
+
 });
 
 
@@ -115,9 +125,13 @@ router.post('/Rendre', function(requete, res, next) {
 /* GET page ajouter livre */
 router.get('/ajouterLivre', function(req, res, next) {
   // recuperer ici les proprietaires ds la bdd (utilisation de la methode adequat du module interragitBDD  var proprietaires =  interrogation_bdd.getListUtilisateurs();
-  // var proprietaires =  interrogation_bdd.getListUtilisateurs();
-  var proprietaires = [];
-  res.render('ajouterLivre', { title: 'LBBE-Books ajouter un livre', liste_proprietaires: proprietaires });
+  InteragitBDD.getListUtilisateurs(function(e,r){
+    if(e){console.log(e);}
+    else{
+      console.log(r);
+      res.render('ajouterLivre', { title: 'LBBE-Books ajouter un livre', liste_proprietaires: r });
+    }
+  });
 });
 
 /* POST search ISBN*/
