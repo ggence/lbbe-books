@@ -69,24 +69,22 @@ router.post('/creerCompte', function(requete, res) {
 
 
 router.get('/livre/:id', function(req, res, next) {
-  InteragitBDD.GetLivre(req.params.id, function(err, livre) {
-    if (livre !== undefined) {
-      res.render('LivreRecherche', livre);
-    } else {
-      var errorGetlivre = {
-        status : "",
-        stack : ""
-      }
-      res.render('error',{message:"Le livre demandé n'a pas été trouvé", error:errorGetlivre});
-    }
-  });
 
-  // var livre ={
-  //   titre : "Guerre et pet",
-  //   auteur : "Voldemort",
-  //   resume : "..."
-  // }
-  // res.render('LivreRecherche', livre);
+  InteragitBDD.get1Livre(req.params.id, function(err,livre){
+        if (livre !== undefined) {
+          //todo:
+          // - get owner's name from Id
+          // - do something from emprunt status
+
+          res.render('LivreRecherche', {livre:livre} );
+        } else {
+          var errorGetlivre = {
+            status : "",
+            stack : ""
+          }
+          res.render('error',{message:"Le livre demandé n'a pas été trouvé", error:errorGetlivre});
+        }
+    }, true);
 
 });
 

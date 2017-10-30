@@ -44,3 +44,21 @@ $git rebase master
 $git checkout master
 $git merge --no--ff postEmpruntLivre2 # --no-ff permet de garder l'historique d'une création de branche
 ```
+
+
+## TODO
+
+liens à la base de données:
+
+fait:
+ * get '/'
+ * get '/ajouterLivre'
+ * post '/AjouterLivre'
+ * get '/creerCompte'
+ * post '/creerCompte'
+
+à faire:
+ * get '/livre/:id' (fait partiellement)
+ * post '/Emprunter'
+ * post '/Rendre'
+ * post '/searchISBN'

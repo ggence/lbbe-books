@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= livre.titre %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/lib/jquery.min.js"></script>
+    <script src="/javascripts/sources/lbbe.jquery.js"></script>
+  </head>
+  <body>
+    <h1>LBBE-Books</h1>
+    <p>livre <b> <%= livre.titre %> </b> </p>
+
+        <table>
+            <tr>
+                <td>ISBN</td>
+                <td><%= livre.isbn %></td>
+                
+            </tr>
+            <tr>
+                <td>Titre</td>
+                <td><%= livre.titre %></td>
+            </tr>
+            <tr>
+                <td>Auteur</td>
+                <td><%= livre.auteurs %></td>
+            </tr>
+            <tr>
+                <td>Résumé</td>
+                <td><%= livre.resume %></td>
+            </tr>
+            <tr>
+                <td>Position</td>
+                <td><%= livre.emplacement %></td>
+            </tr>
+            <tr>
+                <td>Propriétaire</td>
+                <td></td>
+            </tr>
+        </table>
+
+  </body>
+</html>
